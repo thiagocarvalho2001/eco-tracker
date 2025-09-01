@@ -29,7 +29,7 @@ export default function DiscardRegistration({ userId, onDiscardRegistered }) {
     setIsLoading(true)
     
     try {
-      const response = await fetch('http://localhost:5000/discards', {
+      const response = await fetch(import.meta.env.VITE_API_URL +  '/discards', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

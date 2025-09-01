@@ -15,7 +15,7 @@ export default function UserDashboard({ userId }) {
 
   const fetchUserData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`)
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${userId}`)
       if (response.ok) {
         const userData = await response.json()
         setUser(userData)
@@ -27,7 +27,7 @@ export default function UserDashboard({ userId }) {
 
   const fetchUserDiscards = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}/discards`)
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${userId}/discards`)
       if (response.ok) {
         const discardsData = await response.json()
         setDiscards(discardsData)
